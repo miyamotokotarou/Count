@@ -2,25 +2,41 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>これで絶対にリセットできる</title>
+<title>これで100％リセットできる</title>
 <style>
-  body {margin:0; height:100vh; background:#1a1a2e; color:white; font-family:sans-serif; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:40px; font-size:3rem;}
-  #num {font-size:15rem; font-weight:bold; color:#00ff9d;}
-  button {padding:30px 80px; margin:20px; font-size:3rem; border:none; border-radius:30px; cursor:pointer;}
-  .plus {background:#00d2ff; color:black;}
-  .reset {background:#ff0055; color:white;}
+  body {margin:0;height:100vh;background:#16213e;color:white;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:60px;font-family:sans-serif;}
+  #num {font-size:20rem;font-weight:900;}
+  button {padding:30px 80px;font-size:3rem;border:none;border-radius:30px;cursor:pointer;}
+  .plus {background:#00b894;color:white;}
+  .reset {background:#e17055;color:white;}
 </style>
 </head>
 <body>
 
 <div id="num">0</div>
 
-<button class="plus" onclick="count++ ; document.getElementById('num').innerText = count">＋１</button>
-<button class="reset" onclick="count=0 ; document.getElementById('num').innerText = 0">リセット</button>
+<button class="plus" onclick="plus()">＋１ or Enterキー</button>
+<button class="reset" onclick="res()">リセット</button>
 
 <script>
-  // ページを開くたびに0からスタート（保存しない超シンプル版）
-  let count = 0;
+let count = 0;
+
+function plus() {
+  count++;
+  document.getElementById("num").innerText = count;
+}
+
+function res() {
+  count = 0;
+  document.getElementById("num").innerText = "0";
+}
+
+// エンターキーでも＋１
+document.addEventListener("keydown", function(e){
+  if(e.key === "Enter"){
+    plus();
+  }
+});
 </script>
 
 </body>

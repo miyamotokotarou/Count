@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>これで絶対にリセットできる</title>
+<style>
+  body {margin:0; height:100vh; background:#1a1a2e; color:white; font-family:sans-serif; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:40px; font-size:3rem;}
+  #num {font-size:15rem; font-weight:bold; color:#00ff9d;}
+  button {padding:30px 80px; margin:20px; font-size:3rem; border:none; border-radius:30px; cursor:pointer;}
+  .plus {background:#00d2ff; color:black;}
+  .reset {background:#ff0055; color:white;}
+</style>
+</head>
+<body>
+
+<div id="num">0</div>
+
+<button class="plus" onclick="count++ ; document.getElementById('num').innerText = count">＋１</button>
+<button class="reset" onclick="count=0 ; document.getElementById('num').innerText = 0">リセット</button>
+
+<script>
+  // ページを開くたびに0からスタート（保存しない超シンプル版）
+  let count = 0;
+</script>
+
+</body>
+</html>
